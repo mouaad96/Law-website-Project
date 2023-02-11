@@ -41,7 +41,7 @@ CREATE TABLE `agenceinfo` (
 --
 
 INSERT INTO `agenceinfo` (`idAg`, `nomAg`, `mail`, `password`, `nomAd`, `gender`) VALUES
-(1, 'LawyerUp', 'ad@ad.ad', 'ad', 'Aboud DHD', 'male');
+(1, 'LawyerUp', 'mouaadEs-safryouy', 'mou123', 'Mouaad', 'male');
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,7 @@ CREATE TABLE `client` (
 
 INSERT INTO `client` (`idP`, `nomP`, `prenomP`, `gender`, `adresse`, `CNI`, `email`, `password`, `signupDate`, `tel`, `photo`) VALUES
 (1, 'Johnson', 'Michael', '', '1234 Main St, Anytown USA', '123456789', 'michael_johnson@email.com', 'password789', '2022-01-01', '555-555-1212', './images/1.jpg'),
-(2, 'Dahmani', 'Abderrahim ', 'male', '18 Rue 70', 'BA16772', 'ad@ad.ad', 'ad', '0000-00-00', '0630691655', './images/profile.avif'),
+(2, 'Mouaad', 'Es-safryouy ', 'male', '18 Rue 70', 'BA16772', 'mouaad@gmail.com', 'mou1', '0000-00-00', '0750101688', './images/profile.avif'),
 (3, 'Williams', 'Emily', '', '5678 Main St, Anytown USA', '987654321', 'emily_williams@email.com', 'password246', '2022-02-01', '555-555-1213', './images/3.jpg'),
 (4, 'Johnson', 'Ashley', '', '12 Main St, New York, NY 10001', '123456A', 'ashley@gmail.com', 'Ashley1234', '2020-05-01', '1234567890', './images/2.jpg'),
 (5, 'Brown', 'David', '', '34 Park Ave, San Francisco, CA 94102', '234567B', 'david@gmail.com', 'David1234', '2020-07-01', '1234567890', './images/1.jpg');
