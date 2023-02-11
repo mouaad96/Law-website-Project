@@ -1,0 +1,208 @@
+@import "./global.css";
+
+body {
+  font-family: var(--poppins-font);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, var(--black-color), var(--main-color));
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+.navbar ul {
+  display: none !important;
+}
+
+.sign_container .login {
+  display: none;
+}
+
+.container {
+  position: relative;
+  max-width: 915px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container .cover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+}
+
+.container .cover img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+  left: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.container .cover .text {
+  position: absolute;
+  z-index: 130;
+  height: 100%;
+  width: 125%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .forms {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.container .form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forms .form-content .title {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.forms .form-content .title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: var(--black-color);
+}
+
+.forms .signup-form .title:before {
+  width: 20px;
+}
+
+.forms .form-content .input-boxes {
+  margin-top: 30px;
+}
+
+.forms .form-content .input-box {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+
+.form-content .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.form-content .input-box input:focus,
+.form-content .input-box input:valid {
+  border-color: var(--black-color);
+}
+
+.form-content .input-box i {
+  position: absolute;
+  color: var(--black-color);
+  font-size: 17px;
+}
+
+.forms .form-content .text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.forms .form-content .text a:hover {
+  text-decoration: underline;
+}
+
+.forms .form-content .button {
+  color: #fff;
+  margin-top: 40px;
+}
+
+.forms .form-content .button input {
+  color: #fff;
+  background: linear-gradient(to right, var(--black-color), var(--main-color));
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.forms .form-content .button input:hover {
+  animation-name: buttonHovered;
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  background: linear-gradient(to left, var(--black-color), var(--main-color));
+}
+
+.forms .form-content label:hover {
+  text-decoration: underline;
+}
+
+.forms .form-content .login-text,
+.forms .form-content .sign-up-text {
+  text-align: center;
+  margin-top: 25px;
+}
+
+@keyframes buttonHovered {
+  0% {
+    transform: scale(1);
+    background: linear-gradient(
+      to right,
+      var(--black-color),
+      var(--main-color)
+    );
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    background: linear-gradient(to left, var(--black-color), var(--main-color));
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .container .cover {
+    display: none;
+  }
+  .form-content .login-form {
+    width: 100%;
+  }
+  .list1 li {
+    display: none;
+  }
+}
+
+.navbar .itemsList ul li {
+  display: none !important;
+}

@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:200,400,500,600,700");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: #243b55;
+  --main-light: #3f6692;
+  --black-color: #141e30;
+  --white-color: #e0e0e0;
+  --white-color2: #f1f1f1;
+  --white: #fff;
+  --border-color: #ddd;
+  --dark-color: #000;
+  --light-color: #f1f1f1;
+  --main-font: "Roboto", sans-serif;
+  --secondary-font: "Fira Sans", sans-serif;
+  --titles-font: "Josefin Sans", sans-serif;
+  --poppins-font: "Poppins", sans-serif;
+}

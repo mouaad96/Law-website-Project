@@ -1,0 +1,159 @@
+@import "./global.css";
+
+body {
+  font-family: var(--poppins-font);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, var(--black-color), var(--main-color));
+}
+
+.navbar ul {
+  display: none !important;
+}
+
+.sign_container .signup {
+  display: none;
+}
+
+/* code pour faire le setup du container*/
+
+.container {
+  max-width: 800px;
+  background-color: var(--white);
+  width: 100%;
+  padding: 20px 29px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+}
+
+.title {
+  position: relative;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* code pour creer un ligne sous le titre*/
+
+.title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--black-color), var(--main-color));
+}
+
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0 5px 0;
+}
+
+.details {
+  display: grid;
+  margin-bottom: 10px;
+}
+
+.input-box {
+  width: 47%;
+  margin-bottom: 15px;
+}
+
+/* code pour donner un style au input text de la classe input-box */
+
+.input-box input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+/* code pour donner un size de 20px au text Sexe et une font weight de 800*/
+
+.gender-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* code pour creer les dot pour pouvoir cocher les button radio */
+
+.dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* code pour faire le display des label sous forme de flex et faire le display du cursor sous forme de pointer*/
+
+label {
+  display: flex;
+  cursor: pointer;
+}
+
+/* code pour faire le display des categories sous forme de flex et donner un margin top de 15px et ajouter un espace entre eux avec space-between*/
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 15px 0;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three {
+  background: black;
+}
+
+/* code pour chacher les input de type radio button*/
+
+input[type="radio"] {
+  display: none;
+}
+
+/* code pour donner un size de 45px au button et un margin top de 35px*/
+
+.button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+/* code pour donner un style au button */
+
+.button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: var(--white);
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, var(--black-color), var(--main-color));
+}
+
+.button input:hover {
+  background: linear-gradient(to left, var(--black-color), var(--main-color));
+}
+
+@media screen and (max-width: 900px) {
+  .list1 li {
+    display: none;
+  }
+}

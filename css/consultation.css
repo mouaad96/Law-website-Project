@@ -1,0 +1,268 @@
+@import "./global.css";
+
+body {
+  font-family: var(--secondary-font);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  margin-top: 4rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.consultation-sections {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 1rem 0;
+}
+
+.left-section {
+  flex: 1;
+}
+
+.right-section {
+  flex: 1;
+}
+
+/* Progressbar */
+
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 3rem 0;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--main-color);
+  width: 0;
+  transition: 0.3s;
+}
+
+.progress-step {
+  width: 2rem;
+  height: 2rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.progress-step-active {
+  background-color: var(--main-color);
+  color: #f3f3f3;
+}
+
+/* Form */
+
+.form {
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  padding: 1.5rem 3rem;
+  height: 100%;
+}
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+
+.input-group {
+  margin: 1rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+
+.btns-group,
+.price-duration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.price-duration {
+  padding: 2rem 0;
+}
+
+.price-duration .price i,
+.price-duration .duration i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.price-duration .price span,
+.price-duration .duration span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: var(--main-color);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--main-light);
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 0.35rem;
+}
+
+.faq h2,
+.container h1 {
+  color: var(--main-color);
+}
+
+.faq .accordion .accordion-header {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--main-light);
+}
+
+.faq .accordion .accordion-header span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.faq .accordion .accordion-body {
+  padding: 0 0.8rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height ease 0.5s;
+}
+
+.faq .accordion .accordion-body p {
+  border-bottom: none;
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.65rem 0;
+  margin: 0.5rem 0;
+}
+
+.faq .accordion.active .accordion-body {
+  border-bottom: 1px solid #ccc;
+}
+
+.close span {
+  transition: ease 0.5s;
+  display: inline-block;
+  height: 12px;
+  width: 2px;
+  background-color: var(--main-light);
+}
+
+.close span:nth-child(even) {
+  transform: rotate(90deg) translateY(6px);
+}
+
+.active .close span:nth-child(odd) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navbar .itemsList ul li {
+  display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+  .consultation-sections {
+    flex-direction: column;
+  }
+}
