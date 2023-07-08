@@ -43,12 +43,12 @@ include('./connection/connexion.php');
             <?php
             if (isset($_SESSION['isLogged']) && $_SESSION['isLogged'] == true) {
             ?>
-            <button onclick="window.location.href = 'https://localhost/lawyerProject/consultation.php'">Consult
-                Now!</button>
+                <button onclick="window.location.href = 'https://localhost/lawyerProject/consultation.php'">Consult
+                    Now!</button>
             <?php
             } else {
             ?>
-            <button onclick="window.location.href = 'login.php'">Consult Now!</button>
+                <button onclick="window.location.href = 'login.php'">Consult Now!</button>
             <?php
             }
             ?>
@@ -76,20 +76,20 @@ include('./connection/connexion.php');
             $res = $conn->query($sql);
             while ($row = $res->fetch_assoc()) {
             ?>
-            <div class="expertise-box">
-                <div class="expertise-image">
-                    <img src=<?php echo $row["photo"]; ?> alt="" />
-                    <div class="expertise-sign">
-                        <i class="fa-solid fa-building-columns"></i>
+                <div class="expertise-box">
+                    <div class="expertise-image">
+                        <img src=<?php echo $row["photo"]; ?> alt="" />
+                        <div class="expertise-sign">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                    </div>
+                    <div class="expertise-infos">
+                        <h1><?php echo $row["nomE"]; ?></h1>
+                        <p>
+                            <?php echo $row["description"]; ?>
+                        </p>
                     </div>
                 </div>
-                <div class="expertise-infos">
-                    <h1><?php echo $row["nomE"]; ?></h1>
-                    <p>
-                        <?php echo $row["description"]; ?>
-                    </p>
-                </div>
-            </div>
             <?php
             }
             ?>
@@ -197,29 +197,29 @@ include('./connection/connexion.php');
                 $resA = $conn->query($sqlAvocat);
                 while ($row = $resA->fetch_assoc()) {
                 ?>
-                <div class="member-card">
-                    <div class="member-image">
-                        <img width="200px" src=<?php echo $row["photo"]; ?> alt="" />
-                        <div class="member-sign">
-                            <i class="fa-solid fa-money-bill-wave"></i>
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img width="200px" src=<?php echo $row["photo"]; ?> alt="" />
+                            <div class="member-sign">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </div>
+                        </div>
+                        <div class="member-infos">
+                            <h1><?php echo $row["prenomA"] . " " . $row["nomA"]; ?></h1>
+                            <p><?php echo $row["specialite"]; ?></p>
+                            <div class="socials">
+                                <a href=<?php echo $row["linkedin"]; ?>>
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href=>
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href=<?php echo "mailto:" . $row["mail"]; ?>>
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="member-infos">
-                        <h1><?php echo $row["prenomA"] . " " . $row["nomA"]; ?></h1>
-                        <p><?php echo $row["specialite"]; ?></p>
-                        <div class="socials">
-                            <a href=<?php echo $row["linkedin"]; ?>>
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                            <a href=>
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                            <a href=<?php echo "mailto:" . $row["mail"]; ?>>
-                                <i class="fa-solid fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <?php
                 }
                 ?>
